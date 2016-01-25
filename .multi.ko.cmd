@@ -1,1 +1,0 @@
-cmd_/home/pi/programming/goodexample/multi/multi.ko := ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/pi/programming/goodexample/multi/multi.ko /home/pi/programming/goodexample/multi/multi.o /home/pi/programming/goodexample/multi/multi.mod.o
