@@ -7,7 +7,7 @@ int main()
     int currentdev = 0;
     char devname[256] = "/dev/mydevname0";
     int ret, fd0=0, fd1=0, fd2=0, *fd;
-    long choice=0;
+    int choice=0;
     size_t len=1;
     char str[256];
     while (choice != 6) {
