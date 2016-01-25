@@ -114,23 +114,23 @@ static void __exit mydev_exit(void) /* Destructor */
 
 static int my_open(struct inode *i, struct file *f)
 {
-    printk(KERN_INFO "Driver: open()\n");
+    printk(KERN_INFO "Driver: open() device /dev/mydevname%d\n", MINOR(i->i_cdev->dev));
     return 0;
 }
 static int my_close(struct inode *i, struct file *f)
 {
-    printk(KERN_INFO "Driver: close()\n");
+    printk(KERN_INFO "Driver: close() device /dev/mydevname%d\n", MINOR(i->i_cdev->dev));
     return 0;
 }
 static ssize_t my_read(struct file *f, char __user *buf, size_t len, loff_t *off)
 {
-    printk(KERN_INFO "Driver: read()\n");
+    printk(KERN_INFO "Driver: read() device /dev/mydevname%d\n", MINOR(f->f_inode->i_cdev->dev));
     return 0;
 }
 static ssize_t my_write(struct file *f, const char __user *buf, size_t len,
     loff_t *off)
 {
-    printk(KERN_INFO "Driver: write()\n");
+    printk(KERN_INFO "Driver: write() device /dev/mydevname%d\n", MINOR(f->f_inode->i_cdev->dev));
     return len;
 }
 
